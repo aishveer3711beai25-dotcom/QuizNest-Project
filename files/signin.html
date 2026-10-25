@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNest - Entertainment</title>
+
+    <script src="../theme.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+
+        <div class="logo">
+            <a href="../index.html#/" aria-label="QuizNest home"><h1>Quiz<span>NEST</span></h1></a>
+        </div>
+
+        <div class="header-actions">
+
+            <!-- Icon-first CSS-only search: independent of the hamburger dropdown -->
+            <div class="search-toggle-wrap">
+
+                <input type="checkbox" id="search-toggle" aria-hidden="true">
+
+                <label for="search-toggle" class="search-icon-btn" aria-label="Toggle search bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+
+                <form class="search-bar" role="search" action="#" method="get">
+                    <label for="search-input" class="visually-hidden">Search quizzes</label>
+                    <input type="search" id="search-input" name="q" placeholder="Search quizzes...">
+                    <button type="submit" aria-label="Submit search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+            </div>
+
+            <!-- Desktop navigation (hidden on mobile).
+                 data-auth="user" = only when signed in, data-auth="guest" = only when signed out
+                 (category.js switches them using the same login data as index.html) -->
+            <nav class="desktop-menu" aria-label="Primary navigation">
+                <a href="../index.html#/"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                <a href="../index.html#/dashboard" data-auth="user"><i class="fa-solid fa-gauge"></i><span>Hi, <span data-user-name></span></span></a>
+                <a href="../index.html#/signup" data-auth="guest"><i class="fa-solid fa-user-plus"></i><span>Sign Up</span></a>
+                <a href="../index.html#/signin" data-auth="guest"><i class="fa-solid fa-right-to-bracket"></i><span>Sign In</span></a>
+                <a href="../index.html#/" data-auth="user" data-action="logout"><i class="fa-solid fa-right-from-bracket"></i><span>Log Out</span></a>
+            </nav>
+
+            <!-- Mobile navigation: CSS-only checkbox dropdown, links only -->
+            <div class="mobile-menu">
+
+                <input type="checkbox" id="menu-toggle" aria-hidden="true">
+
+                <label for="menu-toggle" class="menu-btn" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+
+                <nav class="dropdown-menu" aria-label="Mobile navigation">
+                    <a href="../index.html#/"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                    <a href="../index.html#/dashboard" data-auth="user"><i class="fa-solid fa-gauge"></i><span>Hi, <span data-user-name></span></span></a>
+                    <a href="../index.html#/signup" data-auth="guest"><i class="fa-solid fa-user-plus"></i><span>Sign Up</span></a>
+                    <a href="../index.html#/signin" data-auth="guest"><i class="fa-solid fa-right-to-bracket"></i><span>Sign In</span></a>
+                    <a href="../index.html#/" data-auth="user" data-action="logout"><i class="fa-solid fa-right-from-bracket"></i><span>Log Out</span></a>
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ================= CATEGORY NAVIGATION ================= -->
+
+    <nav class="category-nav" aria-label="Quiz categories">
+
+        <a href="../index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Start</span>
+        </a>
+
+        <a href="art-literature.html">
+            <i class="fa-solid fa-palette"></i>
+            <span>Art &amp; Literature</span>
+        </a>
+
+        <a href="entertainment.html" class="active">
+            <i class="fa-solid fa-star"></i>
+            <span>Entertainment</span>
+        </a>
+
+        <a href="geography.html">
+            <i class="fa-solid fa-earth-americas"></i>
+            <span>Geography</span>
+        </a>
+
+        <a href="history.html">
+            <i class="fa-solid fa-landmark"></i>
+            <span>History</span>
+        </a>
+
+        <a href="languages.html">
+            <i class="fa-regular fa-comment"></i>
+            <span>Languages</span>
+        </a>
+
+        <a href="science-nature.html">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Science &amp; Nature</span>
+        </a>
+
+        <a href="sports.html">
+            <i class="fa-solid fa-basketball"></i>
+            <span>Sports</span>
+        </a>
+
+        <a href="trivia.html">
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <span>Trivia</span>
+        </a>
+
+    </nav>
+
+    <main>
+
+    <!-- ================= ENTERTAINMENT ================= -->
+
+    <section class="recent" id="entertainment">
+
+        <h2>Entertainment</h2>
+
+        <div class="quiz-grid popular-grid">
+
+            <!-- TODO: put this quiz's HTML file in data-quiz-href (e.g. "your-quiz-file.html"). Empty = not linked yet. -->
+            <div class="quiz-card" data-quiz-id="entertainment-2020s-movie-trivia" data-quiz-href="" data-category="entertainment" data-author="CinemaSam" data-rating="4.5">
+                <button type="button" class="fav-btn" data-fav="entertainment-2020s-movie-trivia" aria-pressed="false" aria-label="Add to favourites: 2020s Movie Trivia">
+                    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
+                <img src="../images/ent1.jpg" alt="2020s Movie Trivia quiz thumbnail">
+                <div class="card-content">
+                    <h3>2020s Movie Trivia</h3>
+                    <p>⭐ 4.5 &nbsp;&nbsp; By CinemaSam</p>
+                </div>
+            </div>
+            <!-- TODO: put this quiz's HTML file in data-quiz-href (e.g. "your-quiz-file.html"). Empty = not linked yet. -->
+            <div class="quiz-card" data-quiz-id="entertainment-pop-music-hits" data-quiz-href="" data-category="entertainment" data-author="BeatDrop" data-rating="4.4">
+                <button type="button" class="fav-btn" data-fav="entertainment-pop-music-hits" aria-pressed="false" aria-label="Add to favourites: Pop Music Hits">
+                    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
+                <img src="../images/ent2.jpg" alt="Pop Music Hits quiz thumbnail">
+                <div class="card-content">
+                    <h3>Pop Music Hits</h3>
+                    <p>⭐ 4.4 &nbsp;&nbsp; By BeatDrop</p>
+                </div>
+            </div>
+            <!-- TODO: put this quiz's HTML file in data-quiz-href (e.g. "your-quiz-file.html"). Empty = not linked yet. -->
+            <div class="quiz-card" data-quiz-id="entertainment-celebrity-trivia" data-quiz-href="" data-category="entertainment" data-author="StarGaze" data-rating="3.8">
+                <button type="button" class="fav-btn" data-fav="entertainment-celebrity-trivia" aria-pressed="false" aria-label="Add to favourites: Celebrity Trivia">
+                    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
+                <img src="../images/ent3.jpeg" alt="Celebrity Trivia quiz thumbnail">
+                <div class="card-content">
+                    <h3>Celebrity Trivia</h3>
+                    <p>⭐ 3.8 &nbsp;&nbsp; By StarGaze</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Quiz<span class="accent">Nest</span></div>
+                    <p>Timed quizzes across categories, built as a second-year front-end project.</p>
+                </div>
+
+                <nav class="footer-col" aria-label="Site links">
+                    <h4>Site</h4>
+                    <ul>
+                        <li><a href="../index.html#/">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-col" aria-label="Account links">
+                    <h4>Account</h4>
+                    <ul>
+                        <li data-auth="guest"><a href="../index.html#/signup">Sign Up</a></li>
+                        <li data-auth="guest"><a href="../index.html#/signin">Sign In</a></li>
+                        <li data-auth="user"><a href="../index.html#/dashboard">Dashboard</a></li>
+                        <li data-auth="user"><a href="../index.html#/" data-action="logout">Log Out</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 QuizNest — a student project.</p>
+                <p>Built with HTML, CSS &amp; JavaScript.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Makes the cards clickable and the hearts work -->
+    <script>
+    /* =====================================================
+       category.js  -  shared by every files/<category>.html page
+
+       The quiz cards themselves are written in each category HTML file.
+       This script does NOT create cards. It only:
+         1. makes each existing card clickable (data-quiz-href)
+         2. makes the heart (.fav-btn) add/remove favourites
+         3. shows the signed-in / signed-out header links
+
+       It uses the SAME localStorage keys as index.html:
+         quiznest_users, quiznest_session, quiznest_progress_<userId|guest>
+       Favourite ids for these cards are strings (e.g. "art-literature-famous-painters"),
+       so they never clash with the numeric ids of the homepage quizzes.
+       The card details are also saved under "quiznest_category_quizzes" so
+       the dashboard on index.html can show these favourites too.
+    ===================================================== */
+    (() => {
+      "use strict";
+
+      // Guard: never attach the listeners twice
+      if (window.__quiznestCategoryReady) return;
+      window.__quiznestCategoryReady = true;
+
+      const KEYS = {
+        users: "quiznest_users",
+        session: "quiznest_session",
+        progress: (userId) => `quiznest_progress_${userId}`,
+        categoryQuizzes: "quiznest_category_quizzes"
+      };
+
+      // Category pages live in /files, so the project root is one level up
+      const PROJECT_ROOT = new URL("../", window.location.href).href;
+
+      // "../images/a.jpg" -> "images/a.jpg" (a path that also works from index.html)
+      const toRootRelative = (url) => {
+        const absolute = new URL(url, window.location.href).href;
+        return absolute.startsWith(PROJECT_ROOT) ? absolute.slice(PROJECT_ROOT.length) : absolute;
+      };
+
+      /* ---------- toast (same classes as index.html) ---------- */
+      const TOAST_ICONS = { success: "fa-circle-check", error: "fa-circle-exclamation", info: "fa-circle-info" };
+
+      const showToast = (message, type = "info", duration = 4500) => {
+        let container = document.getElementById("toast-container");
+        if (!container) {
+          container = document.createElement("div");
+          container.id = "toast-container";
+          container.className = "toast-container";
+          document.body.appendChild(container);
+        }
+        const toast = document.createElement("div");
+        toast.className = `toast toast-${type}`;
+        toast.setAttribute("role", type === "error" ? "alert" : "status");
+        toast.innerHTML = `
+          <i class="fa-solid ${TOAST_ICONS[type] || TOAST_ICONS.info}" aria-hidden="true"></i>
+          <span class="toast-text"></span>
+          <button type="button" class="toast-close" aria-label="Close notification">&times;</button>`;
+        toast.querySelector(".toast-text").textContent = message;
+        const removeToast = () => {
+          toast.classList.add("is-leaving");
+          setTimeout(() => toast.remove(), 250);
+        };
+        toast.querySelector(".toast-close").addEventListener("click", removeToast);
+        container.appendChild(toast);
+        setTimeout(removeToast, duration);
+      };
+
+      /* ---------- localStorage helpers ---------- */
+      const readJSON = (key, fallback) => {
+        try {
+          const raw = localStorage.getItem(key);
+          return raw === null ? fallback : JSON.parse(raw);
+        } catch (error) {
+          return fallback;
+        }
+      };
+
+      const writeJSON = (key, value) => {
+        try {
+          localStorage.setItem(key, JSON.stringify(value));
+          return true;
+        } catch (error) {
+          showToast("Could not save data (browser storage is unavailable or full).", "error");
+          return false;
+        }
+      };
+
+      /* ---------- session (same logic as index.html) ---------- */
+      const getCurrentUser = () => {
+        const session = readJSON(KEYS.session, null);
+        if (!session || !session.userId) return null;
+        const users = readJSON(KEYS.users, []);
+        const user = Array.isArray(users) ? users.find((u) => u.id === session.userId) : null;
+        if (!user) {
+          try { localStorage.removeItem(KEYS.session); } catch (error) { /* ignore */ }
+          return null;
+        }
+        return user;
+      };
+
+      const updateAuthUI = () => {
+        const user = getCurrentUser();
+        document.querySelectorAll("[data-auth]").forEach((el) => {
+          el.hidden = (el.dataset.auth === "user") !== Boolean(user);
+        });
+        document.querySelectorAll("[data-user-name]").forEach((el) => {
+          el.textContent = user ? user.name.split(" ")[0] : "";
+        });
+      };
+
+      const getUid = () => {
+        const user = getCurrentUser();
+        return user ? user.id : "guest";
+      };
+
+      /* ---------- favourites ---------- */
+      const getFavourites = (uid) => {
+        const saved = readJSON(KEYS.progress(uid), null);
+        return saved && Array.isArray(saved.favourites) ? saved.favourites : [];
+      };
+
+      const getCards = () => document.querySelectorAll(".quiz-card[data-quiz-id]");
+
+      const cardTitle = (card) => {
+        const heading = card.querySelector("h3");
+        return heading ? heading.textContent.trim() : "this quiz";
+      };
+
+      // The details the dashboard needs to draw this quiz as a card
+      const cardInfo = (card) => {
+        const img = card.querySelector("img");
+        const href = (card.dataset.quizHref || "").trim();
+        return {
+          id: card.dataset.quizId,
+          title: cardTitle(card),
+          author: card.dataset.author || "",
+          rating: Number(card.dataset.rating) || 0,
+          category: card.dataset.category || "",
+          image: img ? toRootRelative(img.getAttribute("src")) : "",
+          // no quiz file linked yet -> the dashboard falls back to this category page
+          href: href ? toRootRelative(href) : toRootRelative(`${card.dataset.category}.html`)
+        };
+      };
+
+      const saveToRegistry = (cards) => {
+        let registry = readJSON(KEYS.categoryQuizzes, {});
+        if (!registry || typeof registry !== "object" || Array.isArray(registry)) registry = {};
+        cards.forEach((card) => { registry[card.dataset.quizId] = cardInfo(card); });
+        writeJSON(KEYS.categoryQuizzes, registry);
+      };
+
+      // Same look as index.html: .is-active + solid heart when favourited
+      const setHeart = (btn, active, title) => {
+        btn.classList.toggle("is-active", active);
+        btn.setAttribute("aria-pressed", String(active));
+        btn.setAttribute("aria-label", `${active ? "Remove from" : "Add to"} favourites: ${title}`);
+        const icon = btn.querySelector("i");
+        if (icon) {
+          icon.classList.toggle("fa-solid", active);
+          icon.classList.toggle("fa-regular", !active);
+        }
+      };
+
+      const refreshHearts = () => {
+        const favourites = getFavourites(getUid());
+        getCards().forEach((card) => {
+          const btn = card.querySelector(".fav-btn");
+          if (btn) setHeart(btn, favourites.includes(card.dataset.quizId), cardTitle(card));
+        });
+      };
+
+      const toggleFavourite = (card) => {
+        const id = card.dataset.quizId;
+        const uid = getUid();
+        const key = KEYS.progress(uid);
+
+        // Keep everything else in the saved progress (attempts, inProgress) untouched
+        const saved = readJSON(key, null);
+        const progress = saved && typeof saved === "object" && !Array.isArray(saved) ? saved : {};
+        const favourites = Array.isArray(progress.favourites) ? progress.favourites : [];
+        const wasFavourite = favourites.includes(id);
+
+        progress.favourites = wasFavourite ? favourites.filter((f) => f !== id) : [...favourites, id];
+        if (!writeJSON(key, progress)) return;
+
+        if (!wasFavourite) saveToRegistry([card]);
+        refreshHearts();
+
+        const title = cardTitle(card);
+        showToast(wasFavourite ? `Removed "${title}" from favourites.` : `Added "${title}" to favourites.`, "success");
+      };
+
+      /* ---------- opening a quiz ---------- */
+      const openQuiz = (card) => {
+        const href = (card.dataset.quizHref || "").trim();
+        if (!href) {
+          showToast(`The quiz page for "${cardTitle(card)}" hasn't been linked yet.`, "info");
+          return;
+        }
+        window.location.href = href;
+      };
+
+      /* ---------- start ---------- */
+      getCards().forEach((card) => {
+        card.style.cursor = "pointer";
+        card.tabIndex = 0;
+        card.setAttribute("role", "link");
+      });
+
+      // ONE click listener for the whole page (event delegation)
+      document.addEventListener("click", (event) => {
+        const logout = event.target.closest('[data-action="logout"]');
+        if (logout) {
+          event.preventDefault();
+          try { localStorage.removeItem(KEYS.session); } catch (error) { /* ignore */ }
+          updateAuthUI();
+          refreshHearts();
+          showToast("You have been logged out. See you soon!", "success");
+          return;
+        }
+
+        const favBtn = event.target.closest(".fav-btn[data-fav]");
+        if (favBtn) {
+          // The heart must never open the quiz
+          event.preventDefault();
+          event.stopPropagation();
+          const card = favBtn.closest(".quiz-card[data-quiz-id]");
+          if (card) toggleFavourite(card);
+          return;
+        }
+
+        if (event.target.closest("a")) return; // real links keep working
+
+        const card = event.target.closest(".quiz-card[data-quiz-id]");
+        if (card) openQuiz(card);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" && event.target.matches && event.target.matches(".quiz-card[data-quiz-id]")) {
+          event.preventDefault();
+          openQuiz(event.target);
+        }
+      });
+
+      const syncAll = () => {
+        updateAuthUI();
+        refreshHearts();
+      };
+
+      // Back/forward cache and other tabs: always show the latest saved state
+      window.addEventListener("pageshow", syncAll);
+      window.addEventListener("storage", syncAll);
+
+      updateAuthUI();
+      const favourites = getFavourites(getUid());
+      saveToRegistry([...getCards()].filter((card) => favourites.includes(card.dataset.quizId)));
+      refreshHearts();
+    })();
+    </script>
+
+</body>
+</html>

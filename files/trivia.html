@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNest - Trivia</title>
+
+    <script src="../theme.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body data-page="category">
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+
+        <div class="logo">
+            <a href="../index.html#/" aria-label="QuizNest home"><h1>Quiz<span>NEST</span></h1></a>
+        </div>
+
+        <div class="header-actions">
+
+            <!-- Icon-first CSS-only search: independent of the hamburger dropdown -->
+            <div class="search-toggle-wrap">
+
+                <input type="checkbox" id="search-toggle" aria-hidden="true">
+
+                <label for="search-toggle" class="search-icon-btn" aria-label="Toggle search bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+
+                <form class="search-bar" role="search" action="#" method="get">
+                    <label for="search-input" class="visually-hidden">Search quizzes</label>
+                    <input type="search" id="search-input" name="q" placeholder="Search quizzes...">
+                    <button type="submit" aria-label="Submit search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+            </div>
+
+            <!-- Desktop navigation (hidden on mobile).
+                 data-auth="user" = only when signed in, data-auth="guest" = only when signed out
+                 (category.js switches them using the same login data as index.html) -->
+            <nav class="desktop-menu" aria-label="Primary navigation">
+                <a href="../index.html#/"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                <a href="../index.html#/dashboard" data-auth="user"><i class="fa-solid fa-gauge"></i><span>Hi, <span data-user-name></span></span></a>
+                <a href="../index.html#/signup" data-auth="guest"><i class="fa-solid fa-user-plus"></i><span>Sign Up</span></a>
+                <a href="../index.html#/signin" data-auth="guest"><i class="fa-solid fa-right-to-bracket"></i><span>Sign In</span></a>
+                <a href="../index.html#/" data-auth="user" data-action="logout"><i class="fa-solid fa-right-from-bracket"></i><span>Log Out</span></a>
+            </nav>
+
+            <!-- Mobile navigation: CSS-only checkbox dropdown, links only -->
+            <div class="mobile-menu">
+
+                <input type="checkbox" id="menu-toggle" aria-hidden="true">
+
+                <label for="menu-toggle" class="menu-btn" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+
+                <nav class="dropdown-menu" aria-label="Mobile navigation">
+                    <a href="../index.html#/"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                    <a href="../index.html#/dashboard" data-auth="user"><i class="fa-solid fa-gauge"></i><span>Hi, <span data-user-name></span></span></a>
+                    <a href="../index.html#/signup" data-auth="guest"><i class="fa-solid fa-user-plus"></i><span>Sign Up</span></a>
+                    <a href="../index.html#/signin" data-auth="guest"><i class="fa-solid fa-right-to-bracket"></i><span>Sign In</span></a>
+                    <a href="../index.html#/" data-auth="user" data-action="logout"><i class="fa-solid fa-right-from-bracket"></i><span>Log Out</span></a>
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ================= CATEGORY NAVIGATION ================= -->
+
+    <nav class="category-nav" aria-label="Quiz categories">
+
+        <a href="../index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Start</span>
+        </a>
+
+        <a href="art-literature.html">
+            <i class="fa-solid fa-palette"></i>
+            <span>Art &amp; Literature</span>
+        </a>
+
+        <a href="entertainment.html">
+            <i class="fa-solid fa-star"></i>
+            <span>Entertainment</span>
+        </a>
+
+        <a href="geography.html">
+            <i class="fa-solid fa-earth-americas"></i>
+            <span>Geography</span>
+        </a>
+
+        <a href="history.html">
+            <i class="fa-solid fa-landmark"></i>
+            <span>History</span>
+        </a>
+
+        <a href="languages.html">
+            <i class="fa-regular fa-comment"></i>
+            <span>Languages</span>
+        </a>
+
+        <a href="science-nature.html">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Science &amp; Nature</span>
+        </a>
+
+        <a href="sports.html">
+            <i class="fa-solid fa-basketball"></i>
+            <span>Sports</span>
+        </a>
+
+        <a href="trivia.html" class="active">
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <span>Trivia</span>
+        </a>
+
+    </nav>
+
+    <main>
+
+    <!-- ================= TRIVIA ================= -->
+
+    <section class="recent" id="trivia">
+
+        <h2>Trivia</h2>
+
+        <div class="quiz-grid popular-grid">
+
+            <!-- TODO: put this quiz's HTML file in data-quiz-href (e.g. "your-quiz-file.html"). Empty = not linked yet. -->
+            <div class="quiz-card" data-quiz-id="trivia-general-knowledge-mix" data-quiz-href="" data-category="trivia" data-author="QuizQueen" data-rating="4.0">
+                <button type="button" class="fav-btn" data-fav="trivia-general-knowledge-mix" aria-pressed="false" aria-label="Add to favourites: General Knowledge Mix">
+                    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
+                <img src="../images/triv1.jpg" alt="General Knowledge Mix quiz thumbnail">
+                <div class="card-content">
+                    <h3>General Knowledge Mix</h3>
+                    <p>⭐ 4.0 &nbsp;&nbsp; By QuizQueen</p>
+                </div>
+            </div>
+            <!-- TODO: put this quiz's HTML file in data-quiz-href (e.g. "your-quiz-file.html"). Empty = not linked yet. -->
+            <div class="quiz-card" data-quiz-id="trivia-random-facts-challenge" data-quiz-href="" data-category="trivia" data-author="FactFinder" data-rating="3.8">
+                <button type="button" class="fav-btn" data-fav="trivia-random-facts-challenge" aria-pressed="false" aria-label="Add to favourites: Random Facts Challenge">
+                    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
+                <img src="../images/triv2.jpg" alt="Random Facts Challenge quiz thumbnail">
+                <div class="card-content">
+                    <h3>Random Facts Challenge</h3>
+                    <p>⭐ 3.8 &nbsp;&nbsp; By FactFinder</p>
+                </div>
+            </div>
+            <!-- TODO: put this quiz's HTML file in data-quiz-href (e.g. "your-quiz-file.html"). Empty = not linked yet. -->
+            <div class="quiz-card" data-quiz-id="trivia-brain-teasers" data-quiz-href="" data-category="trivia" data-author="PuzzlePro" data-rating="4.3">
+                <button type="button" class="fav-btn" data-fav="trivia-brain-teasers" aria-pressed="false" aria-label="Add to favourites: Brain Teasers">
+                    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
+                <img src="../images/triv3.jpg" alt="Brain Teasers quiz thumbnail">
+                <div class="card-content">
+                    <h3>Brain Teasers</h3>
+                    <p>⭐ 4.3 &nbsp;&nbsp; By PuzzlePro</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Quiz<span class="accent">Nest</span></div>
+                    <p>Timed quizzes across categories, built as a second-year front-end project.</p>
+                </div>
+
+                <nav class="footer-col" aria-label="Site links">
+                    <h4>Site</h4>
+                    <ul>
+                        <li><a href="../index.html#/">Home</a></li>
+                        <li><a href="explore.html">Explore Quizzes</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-col" aria-label="Account links">
+                    <h4>Account</h4>
+                    <ul>
+                        <li data-auth="guest"><a href="../index.html#/signup">Sign Up</a></li>
+                        <li data-auth="guest"><a href="../index.html#/signin">Sign In</a></li>
+                        <li data-auth="user"><a href="../index.html#/dashboard">Dashboard</a></li>
+                        <li data-auth="user"><a href="../index.html#/" data-action="logout">Log Out</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 QuizNest — a student project.</p>
+                <p>Built with HTML, CSS &amp; JavaScript.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Makes the cards clickable and the hearts work -->
+    <script src="../quiz-data.js"></script>
+    <script src="category.js"></script>
+
+</body>
+</html>
